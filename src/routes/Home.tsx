@@ -9,7 +9,7 @@ import { CatType } from '../App';
 type PropTypes = {};
 
 const Home: React.FC<PropTypes> = () => {
-  const getCats = async () => {
+  const getCats = async (): Promise<CatType[]> => {
     return await (
       await fetch(`https://api.thecatapi.com/v1/images/search?limit=20`, {
         headers: {

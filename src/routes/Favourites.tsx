@@ -11,11 +11,11 @@ type PropTypes = {};
 
 const Favourites: React.FC<PropTypes> = () => {
   const catsFromLS: CatType[] =
-    JSON.parse(localStorage.getItem('likedCats') || '{}') || [];
+    JSON.parse(localStorage.getItem('likedCats') || '[]') || [];
   const [likedCats, setLikedCats] = useState(catsFromLS);
 
   useEffect(() => {
-    setLikedCats(JSON.parse(localStorage.getItem('likedCats') || '{}') || []);
+    setLikedCats(JSON.parse(localStorage.getItem('likedCats') || '[]') || []);
   }, []);
 
   if (catsFromLS.length === 0)
